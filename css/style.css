@@ -1,8 +1,27 @@
+/* CSS TABE OF CONTENTS 
+
+# VARIABLES
+# GLOBALS
+    # GLOBAL TYPOGRAPHY
+    # GLOBAL BUTTONS
+    # GLOBAL MEDIA
+        # RESPONSIVE IMAGES
+    # GLOBAL STRUCTURE
+        # HERO
+    # GLOBAL LAYOUT
+        # CONTAINER
+        # GRID
+# HOME PAGE STYLING
+    # PORTFOLIO GRID
+# SUB PAGE STYLING
+    # TOURISM LOGO PAGE STYLING
+*/
+
+
+
 :root {
     --font-body: Helvetica, Arial, sans-serif;
     --font-headings: "futura-pt", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 /* SET GLOBAL TYPOGRAPHY */
@@ -41,10 +60,38 @@ p {
     max-width: 60ch;
 }
 
+/* BUTTONS */
+.button {
+    display: inline-block;
+    padding: 1em 2em;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    border-radius: .5em;
+    text-decoration: none;
+}
+.button:hover {
+    background-color: black;
+    color: white;
+}
 
+/* GLOBAL MEDIA */
+
+/* RESPONSIVE IMAGES */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* GLOBAL HELPERS */
+.centered-text {
+    text-align: center;
+}
+
+/* GLOBAL STRUCTURE */
 
 header {
-    background-color: #aca9c4;
+    /* background-color: #aca9c4; */
     display: flex;
     justify-content: space-between;
     /* border-bottom: .5px solid #888; */
@@ -63,7 +110,8 @@ header a:hover {
 
 main {
     /*   background-color: pink; */
-    padding: 1em;
+    /* padding: 1em; */
+    padding-bottom: 8em;
 }
 
 .site-nav ul {
@@ -73,91 +121,8 @@ main {
     display: flex;
 }
 
-/* HERO */
-.portfolio-hero {
-    /* background-color: orange; */
-    padding: 3em;
-    text-align: center;
-}
-
-.portfolio-hero h1 {
-    font-size: 3em;
-}
-
-/* PORTFOLIO GRID */
-.portfolio-section {
-    --space: 4rem;
-    padding: var(--space);
-}
-
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40ch, 1fr));
-    grid-gap: var(--space);
-    /* background-color: yellow; */
-}
-
-.pg-perspective {
-    perspective: 750px;
-    position: relative;
-    text-align: center;
-}
-
-.portfolio-grid img {
-    /* max-width: 100%; */
-    width: 23em;
-    height: 23em;
-    display: block;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 12px;
-}
-
-.pg-card-info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
-.pg-perspective a {
-    text-decoration: none;
-    color: white;
-}
-
-/* .card {
-    background: #fff;
-} */
-
-/* .card__info {
-    padding: 1.5rem;
-}
-
-.card__info>* {
-    margin: 0;
-}
-
-.card__info>*+* {
-    margin-top: 0.5rem;
-} */
-
-/* TOURISM LOGO CASE STUDY */
-.tl-melbourne-info {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-
-}
-
-
-
 footer {
-    background-color: #aca9c4;
+    /* background-color: #aca9c4; */
     /* border-top: .5px solid #888; */
 }
 
@@ -168,14 +133,52 @@ footer a {
     color: rgb(24, 24, 24);
 }
 
-
 .social-nav ul {
     margin: 0;
     padding: 0;
-    list-styles: none;
+    list-style: none;
     display: flex;
 }
 
+section {
+    padding: 3em 0;
+}
+
+/* HERO */
+.portfolio-hero {
+    /* background-color: orange; */
+    padding: 6em;
+    text-align: center;
+    /* min-height: 50svh; */
+    display: grid;
+    place-items: center;
+}
+
+.portfolio-hero h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin: 1em 0 .5em 0;
+    padding: 0;
+}
+.portfolio-hero h2 {
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0 0 1.5em 0;
+    padding: 0;
+}
+
+/* GLOBAL CONTAINER */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.container.narrow {
+    max-width: 1100px;
+}
+
+/* GLOBAL GRID SYSTEM */
 .row {
     --gridgap: 2em;
     padding-top: 2em;
@@ -236,4 +239,109 @@ footer a {
     .two-thirds.centered {
         grid-column-start: 3;
     }
+}
+
+/* NMA SOCIAL MEDIA ICONS */
+.nma-social-icons {
+    --nma-icons-color: black;
+    display: inline;
+  }
+  
+  .nma-social-icons svg {
+    height: 30px;
+    margin: 1em;
+    fill: var(--nma-icons-color);
+  }
+
+
+/* HOME PAGE STYLING */
+
+/* PORTFOLIO GRID */
+.portfolio-section {
+    --space: 4rem;
+    padding: var(--space);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40ch, 1fr));
+    grid-gap: var(--space);
+    /* background-color: yellow; */
+}
+
+.pg-perspective {
+    perspective: 750px;
+    position: relative;
+    text-align: center;
+}
+
+.portfolio-grid img {
+    /* max-width: 100%; */
+    width: 23em;
+    height: 23em;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+}
+
+/* SHOW HIDE CPTION TEXT ON HOVER */
+/* .pg-card .pg-card-info {
+    display: none;
+}
+
+.pg-card:hover .pg-card-info {
+    display: block;
+} */
+
+.pg-card-info {
+    position: absolute;
+    color: white;
+
+    /* TO CENTER */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+    /* TO PLACE AT BOTTOM */
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.pg-perspective a {
+    text-decoration: none;
+    color: white;
+}
+
+/* .card {
+    background: #fff;
+} */
+
+/* .card__info {
+    padding: 1.5rem;
+}
+
+.card__info>* {
+    margin: 0;
+}
+
+.card__info>*+* {
+    margin-top: 0.5rem;
+} */
+
+/* SUB PAGES STYLING */
+
+.casestudy-subheaders {
+    margin-bottom: .25em;
+}
+
+.casestudy-bylines {
+    font-weight: 400;
+    margin: 0;
+}
+
+/* TOURISM LOGO CASE STUDY */
+.page-melbourne .portfolio-hero{
+    /* background-color: #a00000;
+    color: white; */
 }

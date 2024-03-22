@@ -1,0 +1,239 @@
+:root {
+    --font-body: Helvetica, Arial, sans-serif;
+    --font-headings: "futura-pt", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* SET GLOBAL TYPOGRAPHY */
+body {
+    font-family: var(--font-body);
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: #d2d0db;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-headings);
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 1.875em;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+
+p {
+    max-width: 60ch;
+}
+
+
+
+header {
+    background-color: #aca9c4;
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: .5px solid #888; */
+}
+
+header a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: rgb(24, 24, 24);
+}
+
+header a:hover {
+    color: rgb(255, 255, 255);
+}
+
+main {
+    /*   background-color: pink; */
+    padding: 1em;
+}
+
+.site-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+/* HERO */
+.portfolio-hero {
+    /* background-color: orange; */
+    padding: 3em;
+    text-align: center;
+}
+
+.portfolio-hero h1 {
+    font-size: 3em;
+}
+
+/* PORTFOLIO GRID */
+.portfolio-section {
+    --space: 4rem;
+    padding: var(--space);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40ch, 1fr));
+    grid-gap: var(--space);
+    /* background-color: yellow; */
+}
+
+.pg-perspective {
+    perspective: 750px;
+    position: relative;
+    text-align: center;
+}
+
+.portfolio-grid img {
+    /* max-width: 100%; */
+    width: 23em;
+    height: 23em;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 12px;
+}
+
+.pg-card-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pg-perspective a {
+    text-decoration: none;
+    color: white;
+}
+
+/* .card {
+    background: #fff;
+} */
+
+/* .card__info {
+    padding: 1.5rem;
+}
+
+.card__info>* {
+    margin: 0;
+}
+
+.card__info>*+* {
+    margin-top: 0.5rem;
+} */
+
+/* TOURISM LOGO CASE STUDY */
+.tl-melbourne-info {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+
+}
+
+
+
+footer {
+    background-color: #aca9c4;
+    /* border-top: .5px solid #888; */
+}
+
+footer a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: rgb(24, 24, 24);
+}
+
+
+.social-nav ul {
+    margin: 0;
+    padding: 0;
+    list-styles: none;
+    display: flex;
+}
+
+.row {
+    --gridgap: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+@media (min-width: 768px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--gridgap);
+    }
+
+    .row.vertical-centered {
+        align-items: center;
+    }
+
+    .row.swapped>*:first-child {
+        order: 2;
+    }
+
+    .row.swapped>*:last-child {
+        order: 1;
+    }
+
+    .one-whole {
+        grid-column: span 12 / span 12;
+    }
+
+    .one-half {
+        grid-column: span 6 / span 6;
+    }
+
+    .one-third {
+        grid-column: span 4 / span 4;
+    }
+
+    .two-thirds {
+        grid-column: span 8 / span 8;
+    }
+
+    .one-fourth {
+        grid-column: span 3 / span 3;
+    }
+
+    .three-fourths {
+        grid-column: span 9 / span 9;
+    }
+
+    .one-half.centered {
+        grid-column-start: 4;
+    }
+
+    .one-third.centered {
+        grid-column-start: 5;
+    }
+
+    .two-thirds.centered {
+        grid-column-start: 3;
+    }
+}
